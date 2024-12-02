@@ -9,7 +9,7 @@ export default function BookListPage() {
         <div className="book-list-page">
             <h1 className="header">Book List</h1>
             <button 
-                className="btn"
+                className="btn clear-list-btn"
                 onClick={clearBookList}
             >Clear List</button>
             <BookList 
