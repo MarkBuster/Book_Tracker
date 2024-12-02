@@ -13,13 +13,6 @@
 * - loading: Boolean indicating authentication state loading
 * - signInWithGithub: Function to handle GitHub OAuth sign-in
 * - logout: Function to handle user sign-out
-*
-* Custom Hook:
-* - useAuth: Hook to access auth context, must be used within AuthProvider
-*
-* Dependencies:
-* - Firebase Authentication
-* - React Context API
 ********************************************/
 
 import { createContext, useContext, useState, useEffect } from 'react';

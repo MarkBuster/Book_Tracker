@@ -8,30 +8,9 @@
 *                fonts (Iceberg for titles/authors, Tulpen One for summaries)
 *                and features responsive layouts with flexbox.
 *
-* Color Palette:
-* - Forest Green (primary background)
-* - Sandy Browns (secondary elements)
-* - Gold Accents (highlights)
-* - Cream (text)
-*
-* Key Features:
-* - Custom checkbox styling
-* - Responsive navigation
-* - Form styling
-* - Book list layout
-* - Button states and animations
-* - Custom fonts for different text elements
-*
-* Structure:
-* - Global styles and variables
-* - Form components
-* - Button styles
-* - List styling
-* - Navigation
-* - Page-specific layouts
 ********************************************/
 
-  @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Tulpen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Tulpen+One&display=swap');
 
 :root {
   --sand-light: #E6D5AC;
@@ -42,6 +21,7 @@
   --cream: #F5EFE0;
 }
 
+/* Global Styles */
 * {
   box-sizing: border-box;
 }
@@ -54,6 +34,7 @@ body {
   min-height: 100vh;
 }
 
+/* Form Styles */
 .new-item-form {
   display: flex;
   flex-direction: column;
@@ -69,6 +50,24 @@ body {
   gap: 0.5rem;
 }
 
+.new-item-form input,
+.new-item-form textarea {
+  outline: none;
+  border: 1px solid var(--gold-accent);
+  background: var(--forest-light);
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  color: var(--cream);
+}
+
+.new-item-form textarea {
+  width: 100%;
+  min-height: 100px;
+  font-family: 'Tulpen One', cursive;
+  font-size: 1.2rem;
+}
+
+/* Button Styles */
 .btn {
   background: var(--sand-dark);
   border: 1px solid var(--gold-accent);
@@ -88,7 +87,7 @@ body {
 
 .btn.btn-danger {
   background: transparent;
-  border: 1px solid #ff4444;
+  border-color: #ff4444;
   color: #ff4444;
   padding: 0.25em 0.5em;
   font-size: 0.8rem;
@@ -99,52 +98,20 @@ body {
   background: rgba(255, 68, 68, 0.1);
 }
 
-.book-list-page {
-  position: relative;
-}
-
-.clear-list-btn {
-  position: absolute;
-  top: 0;
-  left: 2rem;
-}
-
-.new-item-form input {
-  outline: none;
-  border: 1px solid var(--gold-accent);
-  background: var(--forest-light);
-  border-radius: 0.25em;
-  padding: 0.5em 1em;
-  color: var(--cream);
-}
-
-.new-item-form textarea {
-  outline: none;
-  border: 1px solid var(--gold-accent);
-  background: var(--forest-light);
-  border-radius: 0.25em;
-  padding: 0.5em 1em;
-  color: var(--cream);
-  width: 100%;
-  min-height: 100px;
-  font-family: 'Tulpen One', cursive;
-  font-size: 1.2rem;
-}
-
+/* Header Styles */
 .header {
   font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0 1rem;
   color: var(--gold-accent);
   text-align: center;
 }
 
+/* List Styles */
 .list {
-  margin: 0;
+  margin: 0 auto;
   padding: 2rem;
   list-style: none;
   max-width: 800px;
-  margin: 0 auto;
 }
 
 .list li {
@@ -165,25 +132,12 @@ body {
   flex: 1;
 }
 
-.book-details h3 {
-  margin: 0;
-  font-family: 'Iceberg', sans-serif;
-  color: var(--sand-light);
+/* hide default checkbox */
+.list li input[type="checkbox"] {
+  display: none;
 }
 
-.book-details .author {
-  margin: 0.5rem 0;
-  font-family: 'Iceberg', sans-serif;
-  color: var(--sand-dark);
-}
-
-.book-details .summary {
-  margin: 0.5rem 0;
-  font-family: 'Tulpen One', cursive;
-  font-size: 1.2rem;
-  color: var(--cream);
-}
-
+/* Custom Checkbox Styling */
 .list li label::before {
   content: "";
   display: block;
@@ -209,6 +163,30 @@ body {
   align-items: center;
 }
 
+/* Book Details Styles */
+.book-details h3,
+.book-details .author {
+  font-family: 'Iceberg', sans-serif;
+  margin: 0.5rem 0;
+}
+
+.book-details h3 {
+  margin: 0;
+  color: var(--sand-light);
+}
+
+.book-details .author {
+  color: var(--sand-dark);
+}
+
+.book-details .summary {
+  margin: 0.5rem 0;
+  font-family: 'Tulpen One', cursive;
+  font-size: 1.2rem;
+  color: var(--cream);
+}
+
+/* Navigation Styles */
 nav {
   background: var(--forest-light);
   padding: 1rem;
@@ -218,12 +196,11 @@ nav {
 
 nav ul {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 nav ul li a {
@@ -237,6 +214,17 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a:focus-visible {
   color: var(--gold-accent);
+}
+
+/* Page-Specific Styles */
+.book-list-page {
+  position: relative;
+}
+
+.clear-list-btn {
+  position: absolute;
+  top: 0;
+  left: 2rem;
 }
 
 .home-page {

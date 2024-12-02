@@ -13,6 +13,7 @@
 * - deleteBook: Function to remove a book from the list
 ********************************************/
 
+import React from 'react';
 import PropTypes from 'prop-types';
 import { EachBook } from "./EachBook"
 

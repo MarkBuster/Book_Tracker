@@ -20,12 +20,7 @@
 * - clearBookList: Removes all books
 *
 * Firebase Operations:
-* - Real-time synchronization with database
 * - CRUD operations for book management
-* 
-* Dependencies:
-* - Firebase Realtime Database
-* - React Router for navigation
 ********************************************/
 
 import { useEffect, useState } from "react";
@@ -117,17 +112,5 @@ return (
       }}/>
     </main>
   </div>
-)
-}
-
-App.propTypes = {
-books: PropTypes.arrayOf(
-  PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    summary: PropTypes.string,
-    completed: PropTypes.bool.isRequired
-  })
 )
 }

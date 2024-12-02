@@ -8,10 +8,6 @@
 *                button. Once authenticated, it displays navigation links to add
 *                books and view the book list, along with a logout option.
 *
-* Dependencies:
-* - AuthContext (useAuth) for authentication state and functions
-* - React Router's Link for navigation
-*
 * Context Used:
 * - user: Current authenticated user object
 * - signInWithGithub: Function to handle GitHub sign-in

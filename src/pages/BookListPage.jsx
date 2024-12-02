@@ -14,9 +14,6 @@
 * - deleteBook: Function to remove individual books
 * - clearBookList: Function to remove all books
 *
-* Dependencies:
-* - BookList component for rendering book items
-* - useOutletContext for accessing book management functions
 ********************************************/
 
 import React from 'react';

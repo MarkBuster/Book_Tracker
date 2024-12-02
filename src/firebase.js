@@ -8,16 +8,6 @@
 *                throughout the app. The configuration includes settings
 *                for Realtime Database, Analytics, and Authentication.
 *
-* Exports:
-* - database: Firebase Realtime Database instance
-*
-* Services Initialized:
-* - Firebase App
-* - Firebase Analytics
-* - Firebase Realtime Database
-*
-* Note: Configuration values should be protected in production
-*       environment using environment variables.
 ********************************************/
 
 // Import the functions you need from the SDKs you need

@@ -8,11 +8,6 @@
 *                to the books list after successful submission. The component
 *                integrates with NewBookForm for data collection.
 *
-* Dependencies:
-* - useOutletContext for accessing addBook function
-* - useNavigate for programmatic navigation
-* - NewBookForm component for user input
-*
 * Context Used:
 * - addBook: Function to add new book to database
 ********************************************/

@@ -17,6 +17,7 @@
 * - deleteBook: Function to remove book from list
 ********************************************/
 
+import React from 'react';
 import PropTypes from 'prop-types';
 
 export function EachBook({ completed, id, title, author, summary, toggleBook, deleteBook }) {

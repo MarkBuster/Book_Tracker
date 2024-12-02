@@ -6,7 +6,7 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Book Tracker
+# Book Trackers
 
 A React application that helps users track their reading progress. Users can add books to their reading list, mark books as completed, and manage their personal library.
 
@@ -47,6 +47,27 @@ npm install
 npm run dev
 ```
 
+## Testing Setup
+
+1. Install testing dependencies:
+
+```bash
+npm install --save-dev @testing-library/react @testing-library/jest-dom vitest jsdom @vitest/coverage-c8 @vitest/ui
+```
+
+2. Create test configuration files:
+
+- vitest.config.js for Vitest configuration
+- src/test/setup.js for test setup and mocks
+
+3. Run tests:
+
+```bash
+npm test              # Run tests in watch mode
+npm run test:coverage # Run tests with coverage report
+npm run test:ui       # Run tests with UI interface
+```
+
 ## Usage
 
 1. Visit the application URL
@@ -67,6 +88,7 @@ npm run dev
 - React Router
 - GitHub OAuth
 - Vite
+- Vitest & React Testing Library
 
 ## Contributing
 Feel free to submit issues and enhancement requests!

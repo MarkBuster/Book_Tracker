@@ -6,9 +6,6 @@
 *                to access non-existent routes. It displays an error message
 *                and provides a button to return to the home page using
 *                React Router's Link component.
-*
-* Dependencies:
-* - React Router's Link component for navigation
 ********************************************/
 
 import React from "react";
