@@ -1,3 +1,29 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      Routes.jsx 
+* FileDesc:      This file configures the application's routing system and
+*                authentication protection. It defines all available routes
+*                and wraps authenticated routes with PrivateRoute component
+*                to ensure only logged-in users can access protected features.
+*
+* Components:
+* - PrivateRoute: HOC that protects routes requiring authentication
+* - AppRoutes: Main routing configuration
+*
+* Protected Routes:
+* - /books: Book list page
+* - /add: Add new book page
+*
+* Public Routes:
+* - /: Home page
+* - /*: NotFound page (404)
+*
+* Dependencies:
+* - React Router for routing
+* - AuthContext for authentication state
+********************************************/
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "../contexts/AuthContext";
 import App from "../App";

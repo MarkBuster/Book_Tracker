@@ -1,3 +1,25 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      firebase.js
+* FileDesc:      This file initializes and configures Firebase services for
+*                the application. It sets up Firebase with the provided
+*                configuration and exports the database instance for use
+*                throughout the app. The configuration includes settings
+*                for Realtime Database, Analytics, and Authentication.
+*
+* Exports:
+* - database: Firebase Realtime Database instance
+*
+* Services Initialized:
+* - Firebase App
+* - Firebase Analytics
+* - Firebase Realtime Database
+*
+* Note: Configuration values should be protected in production
+*       environment using environment variables.
+********************************************/
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";

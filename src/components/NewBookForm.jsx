@@ -1,3 +1,22 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      NewBookForm.jsx
+* FileDesc:      This component provides a form for adding new books to the 
+*                reading list. It manages form state for title, author, and 
+*                summary inputs using React useState hooks. The form prevents 
+*                empty submissions and clears input fields after successful 
+*                submission.
+*
+* Props:
+* - onSubmit: Function that receives (title, author, summary) to create new book
+*
+* State:
+* - newBook: Stores the book title input
+* - newBookAuthor: Stores the author input
+* - newBookSummary: Stores the summary input
+********************************************/
+
 import { useState } from "react"
 import PropTypes from 'prop-types'
 

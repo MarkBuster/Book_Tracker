@@ -1,3 +1,24 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      BookListPage.jsx
+* FileDesc:      This page component displays the user's book list and provides
+*                functionality to manage books. It uses outlet context to access
+*                book data and management functions. The component includes a
+*                clear list button and renders the BookList component with
+*                necessary props for book interactions.
+*
+* Context Used:
+* - books: Array of user's books
+* - toggleBook: Function to mark books as read/unread
+* - deleteBook: Function to remove individual books
+* - clearBookList: Function to remove all books
+*
+* Dependencies:
+* - BookList component for rendering book items
+* - useOutletContext for accessing book management functions
+********************************************/
+
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { BookList } from '../components/BookList';

@@ -1,3 +1,33 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      App.jsx
+* FileDesc:      This is the root component of the Book Tracker application.
+*                It manages the global state of books using Firebase Realtime
+*                Database, provides CRUD operations for books, and handles the
+*                main navigation layout. All book management functions are
+*                passed down through React Router's Outlet context. This component
+*                does not receive props as it serves as the top-level state
+*                manager for the application.
+*
+* State:
+* - books: Array of book objects synchronized with Firebase
+*
+* Functions:
+* - addBook: Creates new book with given title, author, summary
+* - toggleBook: Updates book's completed status
+* - deleteBook: Removes specific book by ID
+* - clearBookList: Removes all books
+*
+* Firebase Operations:
+* - Real-time synchronization with database
+* - CRUD operations for book management
+* 
+* Dependencies:
+* - Firebase Realtime Database
+* - React Router for navigation
+********************************************/
+
 import { useEffect, useState } from "react";
 import { Link, Routes, Route, Outlet } from "react-router-dom";
 import PropTypes from 'prop-types';

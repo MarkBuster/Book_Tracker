@@ -1,3 +1,23 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      HomePage.jsx
+* FileDesc:      This component serves as the landing page for the Book Tracker
+*                application. It manages user authentication display and navigation
+*                options. When no user is logged in, it shows only the sign-in
+*                button. Once authenticated, it displays navigation links to add
+*                books and view the book list, along with a logout option.
+*
+* Dependencies:
+* - AuthContext (useAuth) for authentication state and functions
+* - React Router's Link for navigation
+*
+* Context Used:
+* - user: Current authenticated user object
+* - signInWithGithub: Function to handle GitHub sign-in
+* - logout: Function to handle user sign-out
+********************************************/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';

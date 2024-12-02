@@ -1,4 +1,35 @@
-
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      styles.css
+* FileDesc:      This is the main stylesheet for the Book Tracker application.
+*                It implements an earthy color scheme using CSS variables and
+*                provides styling for all components. The design uses custom
+*                fonts (Iceberg for titles/authors, Tulpen One for summaries)
+*                and features responsive layouts with flexbox.
+*
+* Color Palette:
+* - Forest Green (primary background)
+* - Sandy Browns (secondary elements)
+* - Gold Accents (highlights)
+* - Cream (text)
+*
+* Key Features:
+* - Custom checkbox styling
+* - Responsive navigation
+* - Form styling
+* - Book list layout
+* - Button states and animations
+* - Custom fonts for different text elements
+*
+* Structure:
+* - Global styles and variables
+* - Form components
+* - Button styles
+* - List styling
+* - Navigation
+* - Page-specific layouts
+********************************************/
 
   @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Tulpen+One&display=swap');
 

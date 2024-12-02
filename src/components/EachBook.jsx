@@ -1,3 +1,22 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      EachBook.jsx
+* FileDesc:      This component renders a single book item with checkbox for 
+*                completion status, book details (title, author, summary), 
+*                and a delete button. It handles user interactions for marking 
+*                books as read and deletion.
+*
+* Props:
+* - id: Unique identifier for the book
+* - title: Book's title
+* - author: Book's author
+* - summary: Optional book summary
+* - completed: Boolean indicating if book is read
+* - toggleBook: Function to update book's completion status
+* - deleteBook: Function to remove book from list
+********************************************/
+
 import PropTypes from 'prop-types';
 
 export function EachBook({ completed, id, title, author, summary, toggleBook, deleteBook }) {

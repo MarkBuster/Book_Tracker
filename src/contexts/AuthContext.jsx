@@ -1,3 +1,27 @@
+/*******************************************
+* Name:          Mark Buster
+* Date:          12-4-2024
+* FileName:      AuthContext.jsx
+* FileDesc:      This file implements authentication context and provider using
+*                Firebase Authentication with GitHub as the OAuth provider. It
+*                manages user authentication state and provides authentication
+*                functions throughout the application. The context includes
+*                user state, loading state, sign-in, and logout functionality.
+*
+* Context Values:
+* - user: Current authenticated user object or null
+* - loading: Boolean indicating authentication state loading
+* - signInWithGithub: Function to handle GitHub OAuth sign-in
+* - logout: Function to handle user sign-out
+*
+* Custom Hook:
+* - useAuth: Hook to access auth context, must be used within AuthProvider
+*
+* Dependencies:
+* - Firebase Authentication
+* - React Context API
+********************************************/
+
 import { createContext, useContext, useState, useEffect } from 'react';
 import { 
   getAuth, 
