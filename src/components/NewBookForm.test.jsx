@@ -16,7 +16,7 @@ describe('NewBookForm Component', () => {
         
         expect(screen.getByPlaceholderText('Title')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Author')).toBeInTheDocument();
-        expect(screen.getByPlaceholderText('Book Summary')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Summary / Notes')).toBeInTheDocument();
         expect(screen.getByRole('button', { name: /add/i })).toBeInTheDocument();
     });
 
@@ -25,7 +25,7 @@ describe('NewBookForm Component', () => {
         
         const titleInput = screen.getByPlaceholderText('Title');
         const authorInput = screen.getByPlaceholderText('Author');
-        const summaryInput = screen.getByPlaceholderText('Book Summary');
+        const summaryInput = screen.getByPlaceholderText('Summary / Notes');
         
         fireEvent.change(titleInput, { target: { value: 'New Book' } });
         fireEvent.change(authorInput, { target: { value: 'New Author' } });

@@ -135,7 +135,15 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,20 +177,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -216,10 +232,6 @@
 *                and wraps authenticated routes with PrivateRoute component
 *                to ensure only logged-in users can access protected features.
 *
-* Components:
-* - PrivateRoute: HOC that protects routes requiring authentication
-* - AppRoutes: Main routing configuration
-*
 * Protected Routes:
 * - /books: Book list page
 * - /add: Add new book page
@@ -227,10 +239,6 @@
 * Public Routes:
 * - /: Home page
 * - /*: NotFound page (404)
-*
-* Dependencies:
-* - React Router for routing
-* - AuthContext for authentication state
 ********************************************/
 &nbsp;
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -242,6 +250,15 @@ import AddBookPage from "../pages/AddBookPage";
 import NotFound from "../components/NotFound";
 import { useAuth } from "../contexts/AuthContext";
 &nbsp;
+/**
+ * Higher-order component that protects routes requiring authentication.
+ * Redirects to home page if user is not authenticated.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.children - Protected route components
+ * @returns {JSX.Element} Protected route or redirect
+ */
 <span class="cstat-no" title="statement not covered" >function PrivateRoute({ children }) {</span>
 <span class="cstat-no" title="statement not covered" >  const { user, loading } = useAuth();</span>
   
@@ -256,6 +273,13 @@ import { useAuth } from "../contexts/AuthContext";
 <span class="cstat-no" title="statement not covered" >  return children;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
+/**
+ * Main routing component that configures all application routes.
+ * Wraps the app in authentication provider and sets up protected routes.
+ * 
+ * @component
+ * @returns {JSX.Element} Configured router with all application routes
+ */
 <span class="cstat-no" title="statement not covered" >export function AppRoutes() {</span>
 <span class="cstat-no" title="statement not covered" >  return (</span>
 <span class="cstat-no" title="statement not covered" >    &lt;BrowserRouter&gt;</span>
@@ -286,7 +310,7 @@ import { useAuth } from "../contexts/AuthContext";
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-02T21:55:32.757Z
+                at 2024-12-05T07:23:40.929Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
