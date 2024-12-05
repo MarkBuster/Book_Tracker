@@ -16,6 +16,13 @@ import React from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
 import { NewBookForm } from '../components/NewBookForm';
 
+/**
+ * Renders the add book page with form and handles navigation after submission.
+ * Uses outlet context to access book management functions.
+ * 
+ * @component
+ * @returns {JSX.Element} Rendered add book page
+ */
 export default function AddBookPage() {
     const { addBook } = useOutletContext();
     const navigate = useNavigate();

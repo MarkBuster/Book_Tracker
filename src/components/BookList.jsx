@@ -17,6 +17,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { EachBook } from "./EachBook"
 
+/**
+ * Renders a list of books or displays "No Books" message if empty.
+ * Uses EachBook component to render individual book items.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {Book[]} props.books - Array of book objects to display
+ * @param {function(string, boolean): void} props.toggleBook - Function to toggle book completion status
+ * @param {function(string): void} props.deleteBook - Function to delete a book
+ * @returns {JSX.Element} Rendered list of books or empty state message
+ */
 export function BookList({ books, toggleBook, deleteBook }) {
     return (
         <ul className="list">

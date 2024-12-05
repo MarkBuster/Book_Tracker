@@ -20,6 +20,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Renders an individual book item with completion checkbox and delete button.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {boolean} props.completed - Whether the book is marked as read
+ * @param {string} props.id - Book's unique identifier
+ * @param {string} props.title - Book's title
+ * @param {string} props.author - Book's author
+ * @param {string} [props.summary] - Optional book summary
+ * @param {function(string, boolean): void} props.toggleBook - Handler for toggling completion status
+ * @param {function(string): void} props.deleteBook - Handler for deleting the book
+ * @returns {JSX.Element} Rendered book item with controls
+ */
 export function EachBook({ completed, id, title, author, summary, toggleBook, deleteBook }) {
     return (
         <li>

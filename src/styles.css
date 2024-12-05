@@ -10,7 +10,7 @@
 *
 ********************************************/
 
-@import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Tulpen+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Iceberg&family=Teko:wght@300..700&family=Tulpen+One&display=swap");
 
 :root {
   --sand-light: #E6D5AC;
@@ -63,8 +63,9 @@ body {
 .new-item-form textarea {
   width: 100%;
   min-height: 100px;
-  font-family: 'Tulpen One', cursive;
+  font-family: 'Teko', cursive;
   font-size: 1.2rem;
+  letter-spacing: 0.05em;
 }
 
 /* Button Styles */
@@ -87,15 +88,17 @@ body {
 
 .btn.btn-danger {
   background: transparent;
-  border-color: #ff4444;
+  border-color: #ff444400;
   color: #ff4444;
   padding: 0.25em 0.5em;
   font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  font-family: "Black Ops One";
 }
 
 .btn.btn-danger:hover,
 .btn.btn-danger:focus-visible {
-  background: rgba(255, 68, 68, 0.1);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Header Styles */
@@ -181,9 +184,10 @@ body {
 
 .book-details .summary {
   margin: 0.5rem 0;
-  font-family: 'Tulpen One', cursive;
+  font-family: 'Teko', cursive;
   font-size: 1.2rem;
   color: var(--cream);
+  letter-spacing: 0.05em;
 }
 
 /* Navigation Styles */

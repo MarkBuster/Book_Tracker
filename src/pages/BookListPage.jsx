@@ -20,6 +20,13 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { BookList } from '../components/BookList';
 
+/**
+ * Renders the book list page with clear list button and book list component.
+ * Uses outlet context to access book data and management functions.
+ * 
+ * @component
+ * @returns {JSX.Element} Rendered book list page
+ */
 export default function BookListPage() {
     const { books, toggleBook, deleteBook, clearBookList } = useOutletContext();
     

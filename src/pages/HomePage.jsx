@@ -18,6 +18,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
+/**
+ * Renders the home page with authentication controls and navigation options.
+ * Shows different options based on user authentication state.
+ * 
+ * @component
+ * @returns {JSX.Element} Rendered home page
+ */
 export default function HomePage() {
     const { user, signInWithGithub, logout } = useAuth();
 

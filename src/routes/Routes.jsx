@@ -25,6 +25,15 @@ import AddBookPage from "../pages/AddBookPage";
 import NotFound from "../components/NotFound";
 import { useAuth } from "../contexts/AuthContext";
 
+/**
+ * Higher-order component that protects routes requiring authentication.
+ * Redirects to home page if user is not authenticated.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.children - Protected route components
+ * @returns {JSX.Element} Protected route or redirect
+ */
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
   
@@ -39,6 +48,13 @@ function PrivateRoute({ children }) {
   return children;
 }
 
+/**
+ * Main routing component that configures all application routes.
+ * Wraps the app in authentication provider and sets up protected routes.
+ * 
+ * @component
+ * @returns {JSX.Element} Configured router with all application routes
+ */
 export function AppRoutes() {
   return (
     <BrowserRouter>

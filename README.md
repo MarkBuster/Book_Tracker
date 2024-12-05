@@ -18,8 +18,14 @@ A React application that helps users track their reading progress. Users can add
 - Real-time data synchronization using Firebase
 - Responsive design with an earthy color scheme
 
-## Installation
+## Authentication
+This application uses GitHub OAuth for authentication. To set up:
+1. Create a GitHub OAuth application
+2. Add callback URL in GitHub OAuth settings
+3. Configure Firebase Authentication with GitHub provider
+4. Update environment variables with credentials
 
+## Installation
 1. Clone the repository:
 ```bash
 git clone https://github.com/MarkBuster/Book_Tracker.git
@@ -92,6 +98,13 @@ npm run test:ui       # Run tests with UI interface
 
 ## Contributing
 Feel free to submit issues and enhancement requests!
+
+## Acknowledgments
+
+Testing development was aided by Claude AI Assistant (Anthropic, 2024), which helped with and was limited to:
+- Test structure and organization
+- Testing methodology documentation
+- Code comments and documentation
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

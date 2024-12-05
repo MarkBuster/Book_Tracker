@@ -21,6 +21,15 @@ import React from "react"
 import { useState } from "react"
 import PropTypes from 'prop-types'
 
+/**
+ * Form component for adding new books with title, author, and summary inputs.
+ * Manages its own form state and validates input before submission.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {function(string, string, string): void} props.onSubmit - Handler for form submission
+ * @returns {JSX.Element} Rendered form for adding new books
+ */
 export function NewBookForm(props){
     const [newBook, setNewBook] = useState('')
     const [newBookAuthor, setNewBookAuthor] = useState('')
@@ -55,7 +64,7 @@ export function NewBookForm(props){
                         type="text"
                     />
                     <textarea  
-                        placeholder="Book Summary"
+                        placeholder="Summary / Notes"
                         value={newBookSummary} 
                         onChange={e => setNewBookSummary(e.target.value)} 
                         type="text"  

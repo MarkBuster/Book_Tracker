@@ -25,15 +25,25 @@
 
 import { useEffect, useState } from "react";
 import { Link, Routes, Route, Outlet } from "react-router-dom";
-import PropTypes from 'prop-types';
 import { ref, onValue, set } from "firebase/database";
 import { database } from "./firebase";
 import "./styles.css";
 
-
+/**
+ * Main application component that manages book state and routing.
+ * Provides CRUD operations for books through Firebase and exposes
+ * these operations via React Router's Outlet context.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered application with navigation and outlet for child routes
+ */
 export default function App() {
   const [books, setBooks] = useState([]);
 
+  /**
+   * Effect hook that synchronizes local state with Firebase database.
+   * Sets up a real-time listener for book data changes.
+   */
   useEffect(() => {
     const booksRef = ref(database, 'books');
     
@@ -54,6 +64,13 @@ export default function App() {
     return () => closeListener();
   }, [books]);
 
+  /**
+   * Creates a new book and saves it to both local state and Firebase.
+   * 
+   * @param {string} title - The title of the book
+   * @param {string} author - The author of the book
+   * @param {string} summary - A summary of the book
+   */
   function addBook(title, author, summary) {
     const newBook = {
       id: crypto.randomUUID(),
@@ -69,6 +86,12 @@ export default function App() {
     set(bookRef, newBook);
   }
   
+  /**
+   * Updates a book's completed status in both local state and Firebase.
+   * 
+   * @param {string} id - The ID of the book to update
+   * @param {boolean} completed - The new completed status
+   */
   function toggleBook(id, completed) {
     setBooks(currentBooks => currentBooks.map(book => 
       book.id === id ? { ...book, completed } : book
@@ -79,13 +102,21 @@ export default function App() {
     set(bookRef, { ...book, completed });
   }
   
+  /**
+   * Removes a book from both local state and Firebase.
+   * 
+   * @param {string} id - The ID of the book to delete
+   */
   function deleteBook(id) {
     setBooks(currentBooks => currentBooks.filter(book => book.id !== id));
     
     const bookRef = ref(database, `books/${id}`);
     set(bookRef, null);
   }
-  
+
+  /**
+   * Removes all books from both local state and Firebase.
+   */
   function clearBookList() {
     setBooks([]);
     

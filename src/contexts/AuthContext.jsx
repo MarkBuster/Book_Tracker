@@ -22,17 +22,24 @@ import {
   GithubAuthProvider, 
   signOut,
   onAuthStateChanged,
-  inMemoryPersistence,
-  setPersistence 
 } from 'firebase/auth';
 
 const AuthContext = createContext();
 
+/**
+ * Provider component that makes authentication context available to child components.
+ * 
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.children - Child components to wrap with auth context
+ * @returns {JSX.Element} Authentication context provider
+ */
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const auth = getAuth();
+  const auth = getAuth();//firebase auth instance function
 
+  // Set up listener for authentication state changes when component mounts
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
@@ -42,10 +49,10 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, [auth]);
 
+  // Function to handle GitHub sign-in
   const signInWithGithub = async () => {
     const provider = new GithubAuthProvider();
     try {
-    //   await setPersistence(auth, inMemoryPersistence);
       await signInWithPopup(auth, provider);
     } catch (error) {
       console.error("Error signing in with Github:", error);
@@ -53,6 +60,7 @@ export function AuthProvider({ children }) {
     }
   };
 
+  // Function to handle user sign-out
   const logout = async () => {
     try {
       await signOut(auth);
@@ -62,6 +70,7 @@ export function AuthProvider({ children }) {
     }
   };
 
+  // An object with all the auth-related data and functions
   const value = {
     user,
     loading,
@@ -69,6 +78,7 @@ export function AuthProvider({ children }) {
     logout
   };
 
+  // Provide the auth data to all child components
   return (
     <AuthContext.Provider value={value}>
       {!loading && children}
@@ -76,6 +86,12 @@ export function AuthProvider({ children }) {
   );
 }
 
+/**
+ * Custom hook to access authentication context.
+ * 
+ * @returns {AuthContextType} Authentication context value
+ * @throws {Error} If used outside of AuthProvider
+ */
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
