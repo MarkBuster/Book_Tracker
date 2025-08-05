@@ -1,110 +1,117 @@
-# React + Vite
+# Book Tracker 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and clean React application for tracking your reading list, built with Firebase for real-time data synchronization.
 
-Currently, two official plugins are available:
+**[➡️ Live Demo]([(https://markbuster.github.io/Book_Tracker/)](https://markbuster.github.io/Book_Tracker/))**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Book Tracker
+![Book Tracker App Screenshot](./path-to-your-screenshot.png)
 
-A React application that helps users track their reading progress. Users can add books to their reading list, mark books as completed, and manage their personal library.
+This application helps users track their reading progress. Users can add books to their reading list, mark books as completed, and manage their personal library through a clean, responsive interface.
 
-## Features
-- GitHub Authentication for secure access
-- Add books with title, author, and summary
-- Mark books as read/unread
-- Delete individual books or clear entire list
-- Real-time data synchronization using Firebase
-- Responsive design with an earthy color scheme
+---
 
-## Authentication
-This application uses GitHub OAuth for authentication. To set up:
-1. Create a GitHub OAuth application
-2. Add callback URL in GitHub OAuth settings
-3. Configure Firebase Authentication with GitHub provider
-4. Update environment variables with credentials
+## ✨ Features
 
-## Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/MarkBuster/Book_Tracker.git
-cd book-tracker
-```
+* **Secure Authentication:** User sessions are secured using GitHub OAuth.
+* **Add Books:** Easily add books with a title, author, and a brief summary.
+* **Track Progress:** Toggle a book's read/unread status with a single click.
+* **Library Management:** Keep your library organized by deleting individual books or clearing the entire list.
+* **Real-Time Sync:** Experience seamless, real-time data synchronization across devices with Firebase Realtime Database.
+* **Responsive Design:** A clean, earthy color scheme that looks great on any device size.
 
-2. Install dependencies:
-```bash
-npm install
-```
+---
 
-3. Set up Firebase:
-   - Create a new project in [Firebase Console](https://console.firebase.google.com/)
-   - Enable Authentication with GitHub provider
-   - Set up Realtime Database
-   - Copy your Firebase configuration
-   - Create a GitHub OAuth app and add credentials to Firebase
+## 🛠️ Technologies Used
 
-4. Create environment variables:
-   - Copy `.env.example` to `.env`
-   - Add your Firebase configuration
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-5. Start the development server:
-```bash
-npm run dev
-```
+---
 
-## Testing Setup
+## 🚀 Getting Started
 
-1. Install testing dependencies:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-npm install --save-dev @testing-library/react @testing-library/jest-dom vitest jsdom @vitest/coverage-c8 @vitest/ui
-```
+### Prerequisites
 
-2. Create test configuration files:
+Ensure you have `npm` installed on your machine.
+* npm
+    ```sh
+    npm install npm@latest -g
+    ```
 
-- vitest.config.js for Vitest configuration
-- src/test/setup.js for test setup and mocks
+### Installation
 
-3. Run tests:
+1.  **Clone the repository**
+    ```sh
+    git clone [https://github.com/MarkBuster/Book_Tracker.git](https://github.com/MarkBuster/Book_Tracker.git)
+    ```
+2.  **Navigate to the project directory**
+    ```sh
+    cd Book_Tracker
+    ```
+3.  **Install NPM packages**
+    ```sh
+    npm install
+    ```
+4.  **Set up environment variables**
+    Create a `.env` file in the root of the project and add your Firebase project configuration. You can use `.env.example` as a template.
+    ```env
+    VITE_FIREBASE_API_KEY=your_api_key
+    VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+    VITE_FIREBASE_PROJECT_ID=your_project_id
+    VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+    VITE_FIREBASE_APP_ID=your_app_id
+    ```
+5.  **Start the development server**
+    ```sh
+    npm run dev
+    ```
 
-```bash
-npm test              # Run tests in watch mode
-npm run test:coverage # Run tests with coverage report
-npm run test:ui       # Run tests with UI interface
-```
+### Running Tests
 
-## Usage
+This project uses Vitest for unit and integration testing.
 
-1. Visit the application URL
-2. Sign in with your GitHub account
-3. Add books to your reading list:
-   - Click "Add Book"
-   - Enter book title, author, and optional summary
-   - Click "Add"
-4. Manage your books:
-   - Check the box to mark a book as read
-   - Click the delete button to remove a book
-   - Use "Clear List" to remove all books
-5. View your reading progress through the checkbox indicators
+* To run tests in interactive watch mode:
+    ```sh
+    npm test
+    ```
+* To run tests and generate a coverage report:
+    ```sh
+    npm run test:coverage
+    ```
 
-## Technologies Used
-- React
-- Firebase (Authentication & Realtime Database)
-- React Router
-- GitHub OAuth
-- Vite
-- Vitest & React Testing Library
+---
 
-## Contributing
-Feel free to submit issues and enhancement requests!
+## 📖 Usage
+
+1.  Visit the application's URL.
+2.  Sign in with your GitHub account to get started.
+3.  Add books to your list by clicking "Add Book" and filling in the details.
+4.  Manage your books:
+    * Check the box to mark a book as read.
+    * Click the delete button to remove a book.
+    * Use "Clear List" to remove all books at once.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to fork the repository and submit pull requests.
+
+---
 
 ## Acknowledgments
 
-Testing development was aided by Claude AI Assistant (Anthropic, 2024), which helped with and was limited to:
-- Test structure and organization
-- Testing methodology documentation
-- Code comments and documentation
+* Leveraged Claude AI to accelerate the development of the testing suite, including structuring test cases and documenting testing methodology.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
