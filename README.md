@@ -2,7 +2,7 @@
 
 A simple and clean React application for tracking your reading list, built with Firebase for real-time data synchronization.
 
-**[➡️ Live Demo]([(https://markbuster.github.io/Book_Tracker/)](https://markbuster.github.io/Book_Tracker/))**
+**[➡️ Live Demo](https://markbuster.github.io/Book_Tracker/)**
 
 ![Book Tracker App Screenshot](./path-to-your-screenshot.png)
 
